@@ -10,6 +10,8 @@
 		<NavLi href="/" active={true}>Home</NavLi>
 		<NavLi href="/aeldari">Aeldari</NavLi>
 		<NavLi href="/custodes">Custodes</NavLi>
+		<NavLi href="https://discordapp.com/users/.fallion">Feedback</NavLi>
+		<NavLi href="https://bmc.link/fallion">Buy me a coffee</NavLi>
 	</NavUl>
 </Navbar>
 <div class="container mx-auto">

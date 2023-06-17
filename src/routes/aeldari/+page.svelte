@@ -6,6 +6,10 @@
 	import { aeldari } from '../../data/aeldari/army';
 </script>
 
+<svelte:head>
+	<title>Aeldari</title>
+</svelte:head>
+
 <div class="container mx-auto">
 	<Alert color="red">
 		This is currently very much a work in progress. It's not even close to being finished. Ynnari +

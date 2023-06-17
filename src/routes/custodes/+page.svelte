@@ -6,6 +6,10 @@
 	import { custodes } from '../../data/custodes/army';
 </script>
 
+<svelte:head>
+	<title>Custodes</title>
+</svelte:head>
+
 <div class="container mx-auto">
 	<Alert color="red">This is currently very much a work in progress.</Alert>
 </div>
