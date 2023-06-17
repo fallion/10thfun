@@ -11,6 +11,9 @@
 		value.units.forEach((unit) => {
 			total += unit.selectedCost;
 		});
+		value.enhancements.forEach((enhancement) => {
+			total += enhancement.cost;
+		});
 
 		points = total;
 
