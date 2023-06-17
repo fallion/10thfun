@@ -21,5 +21,5 @@
 <div class="container mx-auto grid grid-cols-2 gap-2">
 	<div><Roster army={aeldari} /></div>
 
-	<div><Summary /></div>
+	<div><Summary enhancements={aeldari.enhancements} /></div>
 </div>
