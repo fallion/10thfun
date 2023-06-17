@@ -16,7 +16,7 @@ export const addUnit = (unit: ArmyUnit) => {
 			selectedModelCount: unit.costs[0][0]
 		};
 
-		if (unit.isUnique) {
+		if (unit.keywords.includes('Epic Hero')) {
 			r.units.some((u) => u.name === unit.name)
 				? console.log('Unit already exists in roster')
 				: r.units.push(convertedUnit);
@@ -25,8 +25,13 @@ export const addUnit = (unit: ArmyUnit) => {
 		}
 
 		const currentAmount = r.units.filter((u) => u.name === unit.name).length;
+		const isBattleline = unit.keywords.includes('Battleline');
 
-		if (currentAmount === 3) {
+		if (isBattleline && currentAmount === 6) {
+			return r;
+		}
+
+		if (!isBattleline && currentAmount === 3) {
 			return r;
 		}
 
