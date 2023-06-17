@@ -1,8 +1,7 @@
 type ArmyUnit = {
 	name: string;
 	costs: Array<[models: number, cost: number]>;
-	isUnique?: boolean;
-	isBattleline?: boolean;
+	keywords: string[];
 };
 
 type Army = {
@@ -19,4 +18,10 @@ type Unit = ArmyUnit & {
 
 type Roster = {
 	units: Unit[];
+};
+
+type Enhancement = {
+	name: string;
+	cost: number;
+	requiredKeywords: string[];
 };

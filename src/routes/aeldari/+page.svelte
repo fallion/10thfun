@@ -3,7 +3,7 @@
 	import Points from '../../components/points.svelte';
 	import Roster from '../../components/roster.svelte';
 	import Summary from '../../components/summary.svelte';
-	import { aeldari } from '../../data/aeldari';
+	import { aeldari } from '../../data/aeldari/army';
 </script>
 
 <div class="container mx-auto">
