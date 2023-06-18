@@ -28,6 +28,7 @@ type EnhancementMapping = Enhancement & {
 };
 
 type Roster = {
+	army: string;
 	units: Unit[];
 	enhancements: EnhancementMapping[];
 };

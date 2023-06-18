@@ -22,7 +22,7 @@ export const units: ArmyUnit[] = [
 	{
 		name: `C’tan Shard of the Void Dragon`,
 		costs: [[1, 270]],
-		keywords: ['Monster', 'Character', 'Fly', ' Epic Hero', 'C’tan Shard of the Void Dragon']
+		keywords: ['Monster', 'Character', 'Fly', 'Epic Hero', 'C’tan Shard of the Void Dragon']
 	},
 	{
 		name: 'Canoptek Doomstalker',
