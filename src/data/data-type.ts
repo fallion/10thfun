@@ -1,13 +1,13 @@
 type ArmyUnit = {
 	name: string;
 	costs: Array<[models: number, cost: number]>;
-	isUnique?: boolean;
-	isBattleline?: boolean;
+	keywords: string[];
 };
 
 type Army = {
 	name: string;
 	units: ArmyUnit[];
+	enhancements: Enhancement[];
 };
 
 // Unit is a combination of ArmyUnit and some extra properties for use in the summary
@@ -17,6 +17,18 @@ type Unit = ArmyUnit & {
 	selectedModelCount: number;
 };
 
+type Enhancement = {
+	name: string;
+	cost: number;
+	requiredKeywords: string[];
+};
+
+type EnhancementMapping = Enhancement & {
+	unitId: string;
+};
+
 type Roster = {
+	army: string;
 	units: Unit[];
+	enhancements: EnhancementMapping[];
 };

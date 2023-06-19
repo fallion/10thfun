@@ -1,10 +1,12 @@
 <script lang="ts">
 	import { Alert } from 'flowbite-svelte';
-	import Points from '../../components/points.svelte';
-	import Roster from '../../components/roster.svelte';
-	import Summary from '../../components/summary.svelte';
-	import { aeldari } from '../../data/aeldari';
+	import { aeldari } from '../../data/aeldari/army';
+	import ArmyBuilder from '../../components/army-builder.svelte';
 </script>
+
+<svelte:head>
+	<title>Aeldari</title>
+</svelte:head>
 
 <div class="container mx-auto">
 	<Alert color="red">
@@ -14,12 +16,5 @@
 	</Alert>
 </div>
 
-<div class="container mx-auto">
-	<Points />
-</div>
-
-<div class="container mx-auto grid grid-cols-2 gap-2">
-	<div><Roster army={aeldari} /></div>
-
-	<div><Summary /></div>
-</div>
+<ArmyBuilder army={aeldari} />
+```

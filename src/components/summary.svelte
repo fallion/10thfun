@@ -9,9 +9,12 @@
 		Button,
 		ButtonGroup
 	} from 'flowbite-svelte';
-	import { addUnit, removeUnit, roster, selectSize } from '../data/store';
+	import { removeUnit, roster, selectSize } from '../data/store';
+	import Enhancements from './enhancements.svelte';
+	import { e } from 'vitest/dist/index-5aad25c1';
 
 	let summary: globalThis.Roster;
+	export let enhancements: Enhancement[];
 
 	roster.subscribe((value) => {
 		summary = value;
@@ -28,9 +31,16 @@
 		<TableBody>
 			{#each summary.units as unit}
 				<TableBodyRow>
-					<TableBodyCell>{unit.name}</TableBodyCell>
 					<TableBodyCell
-						><ButtonGroup
+						><div>{unit.name}</div>
+						{#if summary.enhancements.length > 0 && summary.enhancements.some((e) => e.unitId === unit.id)}
+							<div class="text-xs text-gray-500">
+								{summary.enhancements.find((e) => e.unitId === unit.id)?.name}
+							</div>
+						{/if}</TableBodyCell
+					>
+					<TableBodyCell>
+						<ButtonGroup
 							>{#each unit.costs as cost}
 								<Button
 									color={cost[1] === unit.selectedCost ? 'blue' : 'alternative'}
@@ -38,8 +48,11 @@
 									>{cost[0]} ({cost[1]} pts)</Button
 								>
 							{/each}</ButtonGroup
-						></TableBodyCell
-					>
+						>
+						{#if unit.keywords.includes('Character') && !unit.keywords.includes('Epic Hero')}
+							<Enhancements {unit} {enhancements} />
+						{/if}
+					</TableBodyCell>
 					<TableBodyCell
 						><Button size="xs" color="red" on:click={() => removeUnit(unit.id)}>-</Button
 						></TableBodyCell
