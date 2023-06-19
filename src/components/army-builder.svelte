@@ -5,6 +5,7 @@
 	import Summary from './summary.svelte';
 	import Sync from './sync.svelte';
 	import Details from './details.svelte';
+	import Exporter from './exporter.svelte';
 
 	export let army: Army;
 	let visibleTab = 'builder';
@@ -19,6 +20,8 @@
 </script>
 
 <Sync armyName={army.name} />
+
+<div><Exporter /></div>
 
 <div class="container mx-auto">
 	<Points />

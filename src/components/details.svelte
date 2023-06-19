@@ -11,8 +11,6 @@
 		army = value;
 	});
 
-	const interestingRoles = ['Character', 'Infantry', 'Vehicle', 'Monster'];
-
 	function roleBreakdown() {
 		const breakdown = {
 			Character: 0,
