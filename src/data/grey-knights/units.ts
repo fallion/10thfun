@@ -187,8 +187,8 @@ export const units: ArmyUnit[] = [
 	{
 		name: 'Puriﬁer Squad',
 		costs: [
-			[5, 165],
-			[10, 275]
+			[5, 150],
+			[10, 300]
 		],
 		keywords: ['Infantry', 'Psyker', 'Grenades', 'Imperium', 'Purifier Squad']
 	},
