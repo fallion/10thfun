@@ -9,6 +9,7 @@
 	<NavUl {hidden}>
 		<NavLi href="/" active={true}>Home</NavLi>
 		<NavLi href="/aeldari">Aeldari</NavLi>
+		<NavLi href="/drukhari">Drukhari</NavLi>
 		<NavLi href="/custodes">Custodes</NavLi>
 		<NavLi href="/grey-knights">Grey Knights</NavLi>
 		<NavLi href="/necrons">Necrons</NavLi>
