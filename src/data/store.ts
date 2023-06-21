@@ -28,12 +28,17 @@ export const addUnit = (unit: ArmyUnit) => {
 
 		const currentAmount = r.units.filter((u) => u.name === unit.name).length;
 		const isBattleline = unit.keywords.includes('Battleline');
+		const isDedicatedTransport = unit.keywords.includes('Dedicated Transport');
 
 		if (isBattleline && currentAmount === 6) {
 			return r;
 		}
 
-		if (!isBattleline && currentAmount === 3) {
+		if (isDedicatedTransport && currentAmount === 6) {
+			return r;
+		}
+		// TODO: Not scalable
+		if (!isBattleline && !isDedicatedTransport && currentAmount === 3) {
 			return r;
 		}
 
