@@ -10,6 +10,7 @@
 		TableHead,
 		TableHeadCell
 	} from 'flowbite-svelte';
+	import ArrowFatUp from 'phosphor-svelte/lib/ArrowFatUp';
 	import { addEnhancement, removeEnhancement, roster } from '../data/store';
 
 	type FilteredEnhancment = Enhancement & {
@@ -98,9 +99,9 @@
 	}
 </script>
 
-<div>
-	<Button on:click={() => (modalOpen = true)} color="blue">Add enhancements</Button>
-</div>
+<Button size="xs" on:click={() => (modalOpen = true)} color="blue" alt="Add Enhancements"
+	><ArrowFatUp /></Button
+>
 
 <Modal bind:open={modalOpen} outsideclose>
 	{#if filteredEnhancments.assigned.length > 0}

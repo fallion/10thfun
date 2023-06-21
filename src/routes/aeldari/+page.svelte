@@ -17,4 +17,3 @@
 </div>
 
 <ArmyBuilder army={aeldari} />
-```

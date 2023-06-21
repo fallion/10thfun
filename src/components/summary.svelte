@@ -7,11 +7,11 @@
 		TableBodyRow,
 		TableBodyCell,
 		Button,
-		ButtonGroup
+		ButtonGroup,
+		Popover
 	} from 'flowbite-svelte';
 	import { removeUnit, roster, selectSize } from '../data/store';
 	import Enhancements from './enhancements.svelte';
-	import { e } from 'vitest/dist/index-5aad25c1';
 
 	let summary: globalThis.Roster;
 	export let enhancements: Enhancement[];
@@ -40,18 +40,30 @@
 						{/if}</TableBodyCell
 					>
 					<TableBodyCell>
-						<ButtonGroup
-							>{#each unit.costs as cost}
-								<Button
-									color={cost[1] === unit.selectedCost ? 'blue' : 'alternative'}
-									on:click={() => selectSize(unit.id, cost[0], cost[1])}
-									>{cost[0]} ({cost[1]} pts)</Button
-								>
-							{/each}</ButtonGroup
-						>
-						{#if unit.keywords.includes('Character') && !unit.keywords.includes('Epic Hero')}
-							<Enhancements {unit} {enhancements} />
-						{/if}
+						<div class="max-w-xs">
+							<ButtonGroup size="xs"
+								>{#each unit.costs as cost}
+									<Button
+										size="xs"
+										color={cost[1] === unit.selectedCost ? 'blue' : 'alternative'}
+										on:click={() => selectSize(unit.id, cost[0], cost[1])}
+										id={`unit-${unit.id}-size-${cost[0]}`}
+										>{cost[0]}
+										{#if cost[1] === unit.selectedCost}({`${cost[1]} pts`}}{/if}</Button
+									>
+								{/each}</ButtonGroup
+							>
+							{#each unit.costs as cost}
+								<Popover triggeredBy={`#unit-${unit.id}-size-${cost[0]}`}>{cost[1]} pts</Popover>
+							{/each}
+						</div>
+						<div class="mt-2">
+							<ButtonGroup>
+								{#if unit.keywords.includes('Character') && !unit.keywords.includes('Epic Hero')}
+									<Enhancements {unit} {enhancements} />
+								{/if}
+							</ButtonGroup>
+						</div>
 					</TableBodyCell>
 					<TableBodyCell
 						><Button size="xs" color="red" on:click={() => removeUnit(unit.id)}>-</Button
