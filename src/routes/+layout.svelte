@@ -12,6 +12,7 @@
 		<NavLi href="/drukhari">Drukhari</NavLi>
 		<NavLi href="/custodes">Custodes</NavLi>
 		<NavLi href="/death-guard">Death Guard</NavLi>
+		<NavLi href="/genestealer-cults">Genestealer Cults</NavLi>
 		<NavLi href="/grey-knights">Grey Knights</NavLi>
 		<NavLi href="/necrons">Necrons</NavLi>
 		<NavLi href="https://discordapp.com/users/.fallion">Feedback</NavLi>
