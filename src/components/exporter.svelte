@@ -37,5 +37,10 @@
 </script>
 
 <div class="text-right my-5">
-	<Button color="green" href={CSVDocument} download={`${army.army}.csv`}>Export</Button>
+	<Button
+		btnClass="plausible-event-name=export"
+		color="green"
+		href={CSVDocument}
+		download={`${army.army}.csv`}>Export</Button
+	>
 </div>
