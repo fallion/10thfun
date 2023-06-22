@@ -6,7 +6,6 @@
 		NavUl,
 		NavHamburger,
 		Dropdown,
-		DropdownDivider,
 		DropdownItem,
 		Chevron
 	} from 'flowbite-svelte';
@@ -52,6 +51,10 @@
 					name: 'Tau',
 					href: '/tau',
 					hidden: true
+				},
+				{
+					name: 'Tyranids',
+					href: '/tyranids'
 				}
 			],
 			id: 'nav-xenos'
